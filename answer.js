@@ -25,6 +25,13 @@ function convStringToArrays(testString) {
 		return rows
 }
 
+function lowerStringHeader(testArray) {
+	//TODO: figure out lambda/anon function to do this auto
+	for (let i = 0; i < testArray[0].length; i++) {
+		testArray[0][i] = testArray[0][i].toLowerCase();
+	}
+	return testArray
+}
 
 // New Code
 function part1() {
@@ -67,7 +74,11 @@ function part3() {
 	+ `63,Blaine,Quiz Master,58\n`
 	+ `98,Bill,Doctor’s Assistant,26`
 	let csv = convStringToArrays(testString)
-	
+	console.log(csv)
+	csv = lowerStringHeader(csv)
+	console.log(csv)	
+
+
 	let arrOfObj = []
 	let csvheader = csv[0]
 	let csvbody = csv.slice(1)
@@ -101,7 +112,7 @@ function part4(arrOfObj) {
 		id: "48", 
 		name: "Barry", 
 		occupation: "Runner", 
-		Age: "25" 
+		age: "25" 
 	}
 	let rightSide = arrOfObj.splice(1)
 	arrOfObj.push(newObj)
@@ -110,7 +121,7 @@ function part4(arrOfObj) {
 	//Insert final entry
 	newObj = {
 		id: "7", name: "Bilbo", 
-		occupation: "None", Age: "111"
+		occupation: "None", age: "111"
 	}
 	arrOfObj.push(newObj)
 	//console.log(arrOfObj)
@@ -125,7 +136,11 @@ function part4(arrOfObj) {
 	
 	return arrOfObj
 }
-console.log("Part 4")
-part4(arrOfObj)
+//console.log("Part 4")
+//arrOfObj = part4(arrOfObj)
 
 
+function part5(arrOfObj) {
+	//console.log(arrOfObj)
+}
+//part5(arrOfObj)
