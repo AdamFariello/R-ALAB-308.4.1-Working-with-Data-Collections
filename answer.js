@@ -3,6 +3,7 @@
 //Original code
 //Part 3: Feeling Loopy
 function part3OldCode() {
+		/*
 		let testString = 
 		`Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n`
 		+`1,0.00,0.050,0.050\n`
@@ -15,6 +16,14 @@ function part3OldCode() {
 		+ `8,3.43,0.204,0.192\n`
 		+ `9,3.92,0.226,0.205\n`
 		+ `10,4.41,0.238,0.232`
+		*/
+
+		let testString = 
+		`ID,Name,Occupation,Age\n`
+		+ `42,Bruce,Knight,41\n`
+		+ `57,Bob,Fry Cook,19\n`
+		+ `63,Blaine,Quiz Master,58\n`
+		+ `98,Bill,Doctor’s Assistant,26`
 
 		let rows = []
 		let row = []
@@ -35,8 +44,10 @@ function part3OldCode() {
 		row.push(s)
 		rows.push(row)
 
-		console.log("\nPart 3")
-		console.log(rows)
+		//console.log("\nPart 3")
+		//console.log(rows)
+
+		return rows
 }
 
 // New Code
@@ -51,3 +62,19 @@ function part3OldCode() {
 
 
 // TODO; Part 3
+let csv = part3OldCode()
+let arrOfObj = []
+let csvheader = csv[0]
+let csvbody = csv.slice(1)
+for (row of csvbody) {
+	let obj = {}
+	for (let rowIndex = 0; rowIndex < row.length; rowIndex++) {
+		obj[csvheader[rowIndex]] = row[rowIndex]
+	}
+	arrOfObj.push(obj)
+}
+
+
+for (obj of arrOfObj) {
+	console.log(obj)
+}
