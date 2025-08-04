@@ -96,7 +96,6 @@ function part4(arrOfObj) {
 	arrOfObj = arrOfObj.slice(0,-1)
 	console.log(arrOfObj )
 	
-	/*
 	//insert at entry 1
 	let newObj = {
 		id: "48", 
@@ -104,14 +103,16 @@ function part4(arrOfObj) {
 		occupation: "Runner", 
 		age: "25" 
 	}
-	rightSide = arrOfObj.splice(1)
-	console.log(rightSide)
+	let rightSide = arrOfObj.splice(1)
+	arrOfObj.push(newObj)
+	arrOfObj = arrOfObj.concat(rightSide)
+	
+	newObj = {
+		id: "7", name: "Bilbo", 
+		occupation: "None", age: "111"
+	}
+	arrOfObj.push(newObj)
 	console.log(arrOfObj)
-
-	arrOfObj.append(newObj)
-	arrOfObj.append(rightSide)
-	console.log(arrOfObj)
-	*/
 }
 console.log("Part 4")
 part4(arrOfObj)
