@@ -101,18 +101,31 @@ function part4(arrOfObj) {
 		id: "48", 
 		name: "Barry", 
 		occupation: "Runner", 
-		age: "25" 
+		Age: "25" 
 	}
 	let rightSide = arrOfObj.splice(1)
 	arrOfObj.push(newObj)
 	arrOfObj = arrOfObj.concat(rightSide)
 	
+	//Insert final entry
 	newObj = {
 		id: "7", name: "Bilbo", 
-		occupation: "None", age: "111"
+		occupation: "None", Age: "111"
 	}
 	arrOfObj.push(newObj)
-	console.log(arrOfObj)
+	//console.log(arrOfObj)
+
+	//TODO: change "Age" to "age"
+	let totalAge = 0
+	for (objs of arrOfObj) {
+		//console.log(objs.Age)
+		totalAge += Number(objs.Age)
+	}
+	console.log(totalAge/arrOfObj.length)
+	
+	return arrOfObj
 }
 console.log("Part 4")
 part4(arrOfObj)
+
+
