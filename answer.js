@@ -130,17 +130,36 @@ function part4(arrOfObj) {
 	let totalAge = 0
 	for (objs of arrOfObj) {
 		//console.log(objs.Age)
-		totalAge += Number(objs.Age)
+		totalAge += Number(objs.age)
 	}
 	console.log(totalAge/arrOfObj.length)
 	
 	return arrOfObj
 }
-//console.log("Part 4")
-//arrOfObj = part4(arrOfObj)
+console.log("Part 4")
+arrOfObj = part4(arrOfObj)
 
 
+
+//TODO: Part 5
 function part5(arrOfObj) {
-	//console.log(arrOfObj)
+	//Converting the obj arr into 2d arr
+		
+	//Stolen from 
+	//https://stackoverflow.com/questions/63003485/convert-array-of-objects-to-2d-array
+
+	//Convert into 2d array
+	var arrOfObj = arrOfObj.map(
+					o=>[o.id,o.name,o.occupation, o.age]
+				  )
+
+	//Put back the original headers
+	let arr = [["ID", "Name", "Occupation", "Age"]]
+	arrOfObj = arr.concat(arrOfObj)
+
+	//Convert into strings
+	arrOfObjString = arrOfObj.join("\\n")
+	console.log(arrOfObjString)
 }
-//part5(arrOfObj)
+console.log("Part 5")
+part5(arrOfObj)
