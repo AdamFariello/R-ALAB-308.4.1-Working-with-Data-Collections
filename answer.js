@@ -35,7 +35,10 @@ function lowerStringHeader(testArray) {
 
 // New Code
 function part1() {
-	//I guess nothing to do?
+	// What I did was just split the old function to 
+	// a seperate function for code reuse.
+	// Then after made this function to link to it, with its specfic test string
+
 	let testString = 
 	`Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n`
 	+`1,0.00,0.050,0.050\n`
@@ -58,7 +61,10 @@ part1()
 
 // TODO: Part 2
 function part2() {
-	//I guess also nothing? Just refer to old code
+	// Since I did everything in the previous part, which basically was stuff
+	// I did in the previous lab.
+	// I'll just link part 1's function here
+	part1()
 }
 console.log("Part 2")
 part2()
